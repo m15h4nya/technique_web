@@ -67,9 +67,26 @@ a {
   margin-right: 28px; 
 }
 
+.nav__button[disabled],
+.versions-button[disabled],
+.toggle-button[disabled] {
+  opacity: 0.6; 
+  cursor: not-allowed; 
+  color: gray; 
+}
+
+.toggle-button[disabled] .button-half {
+  color: gray;
+}
+
 .regular-button:hover,
 .versions-button:hover {
   background-color: #01363E;
+} 
+
+.regular-button[disabled]:hover,
+.versions-button[disabled]:hover {
+  background-color: #00515D; 
 }
 
 .regular-button:active,
