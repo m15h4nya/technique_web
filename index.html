@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Vault</title>
+</head>
+<body>
+  <header class="header main-header">
+    <h1 class="header__title main-title">Name of the article</h1>
+    <nav class="nav nav__buttons">
+      <button class="nav__button nav__button--regular regular-button" type="button" aria-label="Save">Save</button>
+      <a class="nav__link versions-button" href="#" aria-label="Versions">Versions</a>
+ 
+      <button id="toggleButton" class="nav__button nav__button--toggle toggle-button" type="button" aria-label="Toggle Edit Mode">
+        <span class="nav__button-half left-half button-half">Edit</span>
+        <span class="nav__button-half right-half button-half active">Read</span>
+      </button>
+    </nav>
+  </header>
+
+  <aside class="aside">
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a id="loginLink" class="nav__link card-trigger" href="#" aria-label="Log in">
+            <img class="nav__icon card-icon" src="images/log-in.svg" alt="Log in">
+          </a>
+        </li>
+        <li class="nav__item"><a class="nav__link" href="page2.html" aria-label="Search"><img src="images/search.svg" alt="Search"></a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <div class="login-panel" id="loginPanel">
+      <button class="login-panel__button login-button" type="button" onclick="window.location.href='log-in.html'" aria-label="Log in">Log in</button>
+      <button class="login-panel__button logout-button" type="button" aria-label="Log out">Log out</button>
+    </div>
+  </main>
+   
+  <script src="main.js"></script>
+</body>
+</html>
+ 
+
+
+
+
