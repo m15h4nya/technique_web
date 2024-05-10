@@ -5,16 +5,12 @@ toggleButton.addEventListener('click', function() {
 });
 
 
-// Получаем ссылку на элементы
-const loginLink = document.getElementById('loginLink');
-const loginPanel = document.getElementById('loginPanel');
 
-// Добавляем обработчик события клика по ссылке
-loginLink.addEventListener('click', function() {
-  // Переключаем видимость панели с кнопками
-  if (loginPanel.style.display === 'none') {
-    loginPanel.style.display = 'block';
-  } else {
-    loginPanel.style.display = 'none';
-  }
+document.addEventListener('DOMContentLoaded', function() {
+  const loginLink = document.getElementById('loginLink');
+  const loginPanel = document.getElementById('loginPanel');
+
+  loginLink.addEventListener('click', function() {
+    loginPanel.classList.toggle('hidden');
+  });
 });
