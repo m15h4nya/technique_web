@@ -5,4 +5,4 @@ WORKDIR /app
 RUN npm install -g http-server
 
 
-CMD [ "http-server" ]
+CMD [ "http-server", "-c-1" ]
