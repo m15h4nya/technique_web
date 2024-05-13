@@ -16,7 +16,6 @@
     <nav class="nav nav__buttons">
       <button class="nav__button nav__button--regular regular-button" type="button" aria-label="Save" disabled>Save</button>
       <a class="nav__link versions-button" aria-label="Versions" disabled>Versions</a>
- 
       <button id="toggleButton" class="nav__button nav__button--toggle toggle-button" type="button" aria-label="Toggle Edit Mode" disabled>
         <span class="nav__button-half left-half button-half">Edit</span>
         <span class="nav__button-half right-half button-half active">Read</span>
@@ -25,30 +24,29 @@
   </header>
 
   <aside class="aside">
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a id="loginLink" class="nav__link card-trigger" aria-label="Log in">
-            <img class="nav__icon card-icon" src="images/log-in.svg" alt="Log in">
-          </a>
+    <nav class="aside__nav">
+      <ul class="aside__list">
+        <li class="aside__item">
+          <button id="loginLink" class="aside__link card-trigger" aria-label="Log in">
+            <img class="aside__icon card-icon" src="images/log-in.svg" alt="Log in">
+          </button>
         </li>
-        <li class="nav__item"><a class="nav__link" href="page2.html" aria-label="Search"><img src="images/search.svg" alt="Search"></a></li>
+        <li class="aside__item">
+          <button class="aside__link" aria-label="Search">
+            <img class="aside__icon" src="images/search.svg" alt="Search">
+          </button>
+        </li>
       </ul>
+      <div class="aside__login-panel hidden" id="loginPanel">
+        <a class="aside__login-button login-button" href="log-in.html" aria-label="Log in">Log in</a>
+        <a class="aside__logout-button logout-button" aria-label="Log out">Log out</a>
+      </div>
     </nav>
   </aside>
 
   <main class="main">
-    <div class="login-panel hidden" id="loginPanel">
-      <button class="login-panel__button login-button" type="button" aria-label="Log in">Log in</button>
-      <button class="login-panel__button logout-button" type="button" aria-label="Log out">Log out</button>
-    </div>
   </main>
    
   <script src="main.js"></script>
 </body>
 </html>
- 
-
-
-
-

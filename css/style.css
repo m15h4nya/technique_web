@@ -146,64 +146,81 @@ aside {
   width: 94px;
   float: left;
   height: 100vh;
-  position: absolute; /* Задаем позиционирование */
+  position: fixed; /* Задаем позиционирование */
   top: 0; /* Располагаем панель сверху */
   left: 0; /* Располагаем панель слева */
   bottom: 0; /* Располагаем панель снизу */
   z-index: 2; /* Устанавливаем значение z-index выше, чем у верхней панели */
 }
 
-aside nav ul li {
+.aside__nav {
+  margin-top: 42px;
+}
+
+.aside__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.aside__item {
   margin-bottom: 64px;
   display: flex;
   justify-content: center;
 }
 
-aside nav ul li:first-child {
-  margin-top: 42px;
+.aside__link {
+  display: block;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-/* Скрыть панель с кнопками по умолчанию */
-.login-panel {
+.aside__icon {
+  width: 25px;
+  height: 25px;
+}
+
+/* Скрытая панель с кнопками*/
+.aside__login-panel {
   position: absolute;
+  top: 106px;
   background-color: #1F1F1F;
   border: 1px solid #79747E;
   padding: 20px;
   z-index: 3;
-  width: 220px;
-  height: 40px;
 }
 
 .hidden {
   display: none;
 }
 
-.login-button,
-.logout-button {
+.aside__login-button {
+  margin-bottom: 5px;
+}
+
+.aside__login-button,
+.aside__logout-button {
   display: inline-block;
-  justify-content: center;
-  margin-right: 10px;
+  text-align: center;
   border-radius: 100px;
   background-color: #00515D;
   color: #fff;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #79747E;
   cursor: pointer;
   font-size: 14px;
   width: 100px;
-}
+} 
 
-.login-button:last-child,
-.logout-button:last-child {
-  margin-right: 0; 
-}
 
-.login-button:hover,
-.logout-button:hover {
+.aside__login-button:hover,
+.aside__logout-button:hover {
   background-color: #01363E;
 }
 
-.login-button:active,
-.logout-button:active {
+.aside__login-button:active,
+.aside__logout-button:active {
   background-color: #037C8E;
-}
+} 
