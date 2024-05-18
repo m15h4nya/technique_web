@@ -224,3 +224,20 @@ aside {
 .aside__logout-button:active {
   background-color: #037C8E;
 } 
+
+
+.main {
+  z-index: 4;
+  padding: 40px 50px 40px 140px;
+  color: #e8e8e8;
+  font-size: 16px;
+}
+
+.main_content-list {
+  list-style: circle;
+}
+
+.main_a {
+  color: #037C8E;
+  text-decoration: underline;
+}
