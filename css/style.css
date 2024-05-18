@@ -227,17 +227,21 @@ aside {
 
 
 .main {
-  z-index: 4;
-  padding: 40px 50px 40px 140px;
+  padding: 40px 50px 40px 180px;
   color: #e8e8e8;
-  font-size: 16px;
+  font-size: 20px;
+  z-index: 4;
 }
 
 .main_content-list {
   list-style: circle;
 }
 
-.main_a {
+.main_content-items {
+  margin-bottom: 10px;
+}
+
+.main_content-links {
   color: #037C8E;
   text-decoration: underline;
 }

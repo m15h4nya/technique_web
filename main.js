@@ -44,9 +44,10 @@ fetch(host+all_files)
 
 let printLi = (elem) => {
   let li = document.createElement('li');
+  li.classList.add('main_content-items')
   let a = document.createElement('a');
   a.textContent = elem; // elem = blabla
-  a.classList.add('main_a')
+  a.classList.add('main_content-links')
   a.href = web_host + "/" + elem;
   li.appendChild(a);
   // li.textContent = blabla
