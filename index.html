@@ -11,44 +11,45 @@
   <title>Vault</title>
 </head>
 <body>
-  <header class="header main-header">
-    <h1 class="header__title main-title">Name of the article</h1>
-    <nav class="nav nav__buttons">
-      <button class="nav__button nav__button--regular regular-button" type="button" aria-label="Save" disabled>Save</button>
-      <a class="nav__link versions-button" aria-label="Versions" disabled>Versions</a>
-      <button id="toggleButton" class="nav__button nav__button--toggle toggle-button" type="button" aria-label="Toggle Edit Mode" disabled>
-        <span class="nav__button-half left-half button-half">Edit</span>
-        <span class="nav__button-half right-half button-half active">Read</span>
-      </button>
-    </nav>
-  </header>
-
-  <aside class="aside">
-    <nav class="aside__nav">
-      <ul class="aside__list">
-        <li class="aside__item">
-          <button id="loginLink" class="aside__link card-trigger" aria-label="Log in">
-            <img class="aside__icon card-icon" src="images/log-in.svg" alt="Log in">
+  <aside class="sidebar">
+    <nav class="sidebar__nav">
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <button id="loginLink" class="sidebar__link sidebar__link--card-trigger" aria-label="Log in">
+            <img class="sidebar__icon sidebar__icon--card" src="images/log-in.svg" alt="Log in">
           </button>
         </li>
-        <li class="aside__item">
-          <button class="aside__link" aria-label="Search">
-            <img class="aside__icon" src="images/search.svg" alt="Search">
+        <li class="sidebar__item">
+          <button class="sidebar__link" aria-label="Search">
+            <img class="sidebar__icon" src="images/search.svg" alt="Search">
           </button>
         </li>
       </ul>
-      <div class="aside__login-panel hidden" id="loginPanel">
-        <a class="aside__login-button login-button" href="log-in.html" aria-label="Log in">Log in</a>
-        <a class="aside__logout-button logout-button" aria-label="Log out">Log out</a>
-      </div>
+        <div class="sidebar__login-panel hidden" id="loginPanel">
+          <a class="sidebar__login-button login-button" href="log-in.html" aria-label="Log in">Log in</a>
+          <a class="sidebar__logout-button logout-button" aria-label="Log out">Log out</a>
+        </div>
     </nav>
   </aside>
+    
+  <main class="content">
+    <section class="content__header">
+      <h1 class="content__title">Name of the article</h1>
+      <nav class="content__nav">
+        <button class="content__button content__button--regular" type="button" aria-label="Save" disabled>Save</button>
+        <a class="content__link content__link--versions" aria-label="Versions" disabled>Versions</a>
+        <button id="toggleButton" class="nav__button nav__button--toggle toggle-button" type="button" aria-label="Toggle Edit Mode" disabled>
+          <span class="content__button-half left-half button-half">Edit</span>
+          <span class="content__button-half right-half button-half active">Read</span>
+        </button>
+      </nav>
+    </section>
 
-  <main class="main">
-    <ul class="main_content-list">
-    </ul>
+    <section class="content__main">
+      <ul class="content__list"></ul>
+    </section>
+
   </main>
-   
   <script src="main.js"></script>
 </body>
 </html>

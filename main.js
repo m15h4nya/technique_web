@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-let block = document.querySelector('.main_content-list')
+let block = document.querySelector('.content__list')
 
 const host = 'http://localhost:8081';
 const web_host = 'http://localhost:8080';

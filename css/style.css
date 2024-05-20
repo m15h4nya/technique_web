@@ -1,14 +1,13 @@
 body {
-  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 20px;
   line-height: 19px;
   background-color: #333;
   display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Задаем минимальную высоту равную высоте окна браузера */
-  margin: 0;
 }
 
 ul {
@@ -21,35 +20,107 @@ a {
   text-decoration: none;
 }
 
-.header {
-  background-color: #1f1f1f;
-  color: #fff;
-  padding: 33px 28px 33px 160px;
-  align-items: center;
+.sidebar {
+  width: 94px;
+  background-color: #1F1F1F;
+  height: 100vh;
   display: flex;
-  justify-content: space-between;
-  position: relative; 
-  z-index: 1; 
+  flex-direction: column;
+  padding-top: 42px;
+  cursor: pointer;
 }
 
-.header__title {
+.sidebar__item {
+  margin-bottom: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar__link {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sidebar__icon {
+  width: 25px;
+  height: 25px;
+} 
+
+/* Скрытая панель с кнопками*/
+.sidebar__login-panel {
+  position: absolute;
+  top: 106px;
+  background-color: #1F1F1F;
+  border: 1px solid #79747E;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* .sidebar__login-button {
+  margin-bottom: 5px;
+} */
+
+.sidebar__login-button,
+.sidebar__logout-button {
+  display: inline-block;
+  text-align: center;
+  border-radius: 100px;
+  background-color: #00515D;
+  color: #fff;
+  padding: 5px;
+  border: 1px solid #79747E;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100px;
+  margin-bottom: 5px;
+} 
+
+
+.sidebar__login-button:hover,
+.sidebar__logout-button:hover {
+  background-color: #01363E;
+}
+
+.sidebar__login-button:active,
+.sidebar__logout-button:active {
+  background-color: #037C8E;
+} 
+
+.content {
+  flex-grow: 1;
+  background-color: #303030;
+}
+
+.content__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 34px 28px 27px 110px;
+  background-color: #1F1F1F;
+}
+
+.content__title {
   font-size: 40px;
   color: #fff;
   margin: 0;
   padding: 0;
 }
 
-.nav__buttons {
+.content__nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-right: 28px;
 }
 
-.regular-button {
+.content__button--regular{
   border: 1px solid #79747E;
   background-color: #00515D;
-  color: #fff;
   font-size: 14px;
   padding: 10px 43px;
   border-radius: 100px;
@@ -57,18 +128,17 @@ a {
   cursor: pointer;
 }
 
-.versions-button {
+.content__link--versions {
   padding: 10px 29px 10px 28px;
   border: 1px solid #79747E;
   background-color: #00515D;
-  color: #fff;
   font-size: 14px;
   border-radius: 100px;
   margin-right: 28px; 
 }
 
-.nav__button[disabled],
-.versions-button[disabled],
+.content__button--regular[disabled],
+.content__link--versions[disabled],
 .toggle-button[disabled] {
   opacity: 0.6; 
   cursor: not-allowed; 
@@ -79,18 +149,18 @@ a {
   color: gray;
 }
 
-.regular-button:hover,
-.versions-button:hover {
+.content__button--regular:hover,
+.content__link--versions:hover {
   background-color: #01363E;
 } 
 
-.regular-button[disabled]:hover,
-.versions-button[disabled]:hover {
+.content__button--regular[disabled]:hover,
+.content__link--versions[disabled]:hover {
   background-color: #00515D; 
 }
 
-.regular-button:active,
-.versions-button:active {
+.content__button--regular:active,
+.content__link--versions:active {
   background-color: #037C8E;
 }
 
@@ -140,108 +210,17 @@ a {
   background-color: transparent;
 }
 
-
-aside {
-  background-color: #1F1F1F;
-  width: 94px;
-  float: left;
-  height: 100vh;
-  position: fixed; /* Задаем позиционирование */
-  top: 0; /* Располагаем панель сверху */
-  left: 0; /* Располагаем панель слева */
-  bottom: 0; /* Располагаем панель снизу */
-  z-index: 2; /* Устанавливаем значение z-index выше, чем у верхней панели */
-}
-
-.aside__nav {
-  margin-top: 42px;
-}
-
-.aside__list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.aside__item {
-  margin-bottom: 64px;
-  display: flex;
-  justify-content: center;
-}
-
-.aside__link {
-  display: block;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.aside__icon {
-  width: 25px;
-  height: 25px;
-}
-
-/* Скрытая панель с кнопками*/
-.aside__login-panel {
-  position: absolute;
-  top: 106px;
-  background-color: #1F1F1F;
-  border: 1px solid #79747E;
-  padding: 20px;
-  z-index: 3;
-}
-
-.hidden {
-  display: none;
-}
-
-.aside__login-button {
-  margin-bottom: 5px;
-}
-
-.aside__login-button,
-.aside__logout-button {
-  display: inline-block;
-  text-align: center;
-  border-radius: 100px;
-  background-color: #00515D;
-  color: #fff;
-  padding: 5px;
-  border: 1px solid #79747E;
-  cursor: pointer;
-  font-size: 14px;
-  width: 100px;
-} 
-
-
-.aside__login-button:hover,
-.aside__logout-button:hover {
-  background-color: #01363E;
-}
-
-.aside__login-button:active,
-.aside__logout-button:active {
-  background-color: #037C8E;
-} 
-
-
-.main {
-  padding: 40px 50px 40px 180px;
+.content__main {
+  padding: 40px 50px 40px 140px;
   color: #e8e8e8;
-  font-size: 20px;
-  z-index: 4;
+  font-size: 16px;
 }
 
-.main_content-list {
+.content__list {
   list-style: circle;
 }
 
-.main_content-items {
-  margin-bottom: 10px;
-}
-
-.main_content-links {
+.main_a {
   color: #037C8E;
   text-decoration: underline;
 }
