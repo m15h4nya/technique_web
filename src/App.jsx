@@ -1,16 +1,18 @@
-import ContentMain from './ContentMain.jsx';
-import Header from './Header.jsx';
-import Aside from './Aside.jsx';
-import './App.css';
+import MainContent from './ContentMain/ContentMain.jsx';
+import Header from './Header/Header.jsx';
+import Aside from './Aside/Aside.jsx';
+import HeaderName from './Header/HeaderName.jsx';
+import './App.scss';
 
 const App = () => {
+
   return (
     <div className="app">
       <Aside />
 
       <main className="content">
         <Header />
-        <ContentMain />
+        <MainContent />
       </main>
     </div>
   );

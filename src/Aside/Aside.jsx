@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Aside.scss'
 
 
 export default function Aside() {
@@ -17,12 +18,12 @@ export default function Aside() {
                             className="sidebar__link sidebar__link--card-trigger"
                             aria-label="Log in"
                             onClick={toggleLoginPanel}>
-                            <img className="sidebar__icon sidebar__icon--card" src="src/images/log-in.svg" alt="Log in" />
+                            <img className="sidebar__icon sidebar__icon--card" src="images/log-in.svg" alt="Log in" />
                         </button>
                     </li>
                     <li className="sidebar__item">
                         <button className="sidebar__link" aria-label="Search">
-                            <img className="sidebar__icon" src="src/images/search.svg" alt="Search" />
+                            <img className="sidebar__icon" src="images/search.svg" alt="Search" />
                         </button>
                     </li>
                 </ul>

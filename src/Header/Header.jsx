@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import './Header.scss'
 
 
 export default function Header() {
+    const [fileName, setFileName] = useState('filename');
     const [isEditMode, setEditMode] = useState(false);
 
     const toggleEditMode = () => {
@@ -10,7 +12,7 @@ export default function Header() {
 
     return (
         <section className="content__header">
-            <h1 className="content__title">Name of the article</h1>
+            <h1 className="content__title">{fileName}</h1>
             <nav className="content__nav">
                 <button className="content__button content__button--regular" type="button" aria-label="Save" disabled>
                     Save
