@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './Header.scss'
 
 
-export default function Header() {
-    const [fileName, setFileName] = useState('filename');
+export default function Header({ fileName }) {
     const [isEditMode, setEditMode] = useState(false);
+
 
     const toggleEditMode = () => {
         setEditMode(!isEditMode);

@@ -3,16 +3,19 @@ import Header from './Header/Header.jsx';
 import Aside from './Aside/Aside.jsx';
 import HeaderName from './Header/HeaderName.jsx';
 import './App.scss';
+import { useState } from 'react';
 
 const App = () => {
+  const [fileName, setFileName] = useState('')
+
 
   return (
     <div className="app">
       <Aside />
 
       <main className="content">
-        <Header />
-        <MainContent />
+        <Header fileName={fileName}/>
+        <MainContent setFileName={ setFileName }/>
       </main>
     </div>
   );

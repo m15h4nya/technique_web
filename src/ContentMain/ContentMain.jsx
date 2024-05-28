@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './ContentMain.scss'
 
 
-function AllFiles() {
+function AllFiles({ setFileName }) {
   const [files, setFiles] = useState([]);
-
+  setFileName('/')
   
   useEffect(() => {
     const fetchData = async () => {
@@ -39,11 +39,12 @@ function AllFiles() {
 }
 
 
-function FileContent() {
+function FileContent( {setFileName} ) {
 
   const filename = window.location.pathname;
   const [content, setContent] = useState('');
-
+  
+  setFileName(filename);
 
   useEffect(() => {
     const fetchFileContent = async () => {
@@ -64,19 +65,18 @@ function FileContent() {
 
   return (
     <div className="file-content">
-      <h2>{filename}</h2>
       <pre>{content}</pre>
     </div>
   );
 }
 
 // Основной компонент приложения с маршрутизацией
-export default function MainContent() {
+export default function MainContent({ setFileName }) {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AllFiles />} />
-        <Route path="/:filename" element={<FileContent />} />
+        <Route path="/" element={<AllFiles setFileName={ setFileName }/>} />
+        <Route path="/:filename" element={<FileContent setFileName={ setFileName }/>} />
       </Routes>
     </Router>
   );
