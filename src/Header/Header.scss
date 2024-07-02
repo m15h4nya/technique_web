@@ -1,0 +1,126 @@
+.content {
+    flex-grow: 1;
+    background-color: #303030;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 34px 28px 27px 110px;
+        background-color: #1F1F1F;
+    }
+
+    &__title {
+        font-size: 40px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 28px;
+    }
+
+    &__button--regular,
+    &__link--versions {
+        border: 1px solid #79747E;
+        background-color: #00515D;
+        font-size: 14px;
+        border-radius: 100px;
+        margin-right: 28px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #01363E;
+        }
+
+        &[disabled] {
+            opacity: 0.6;
+            cursor: not-allowed;
+            color: gray;
+
+            &:hover {
+                background-color: #00515D;
+            }
+        }
+
+        &:active {
+            background-color: #037C8E;
+        }
+    }
+
+    &__button--regular {
+        padding: 10px 43px;
+    }
+
+    &__link--versions {
+        padding: 10px 29px 10px 28px;
+    }
+
+    &__main {
+        padding: 40px 50px 40px 130px;
+        color: #e8e8e8;
+        font-size: 16px;
+    }
+}
+
+.toggle-button {
+    position: relative;
+    width: 216px;
+    height: 40px;
+    border: 1px solid #79747E;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 14px;
+    overflow: hidden;
+    background-color: #1F1F1F;
+
+    &[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+        color: gray;
+
+        .button-half {
+            color: gray;
+        }
+    }
+
+    .button-half {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+
+    .left-half {
+        background-color: #00515D;
+        color: white;
+        left: 0;
+    }
+
+    .right-half {
+        background-color: transparent;
+        color: white;
+        left: 50%;
+        border-right: 1px solid #79747E;
+    }
+
+    &.active {
+        .right-half {
+            transform: translateX(0);
+            background-color: #00515D;
+        }
+
+        .left-half {
+            transform: translateX(0);
+            background-color: transparent;
+        }
+    }
+}
