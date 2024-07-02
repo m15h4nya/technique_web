@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
-import './ContentMain.scss'
+import ReactMarkdown from 'react-markdown';
+import './ContentMain.scss';
 
-
-function AllFiles({ setFileName }) {
+function AllFiles({setFileName}) {
   const [files, setFiles] = useState([]);
-  setFileName('/')
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,6 +19,7 @@ function AllFiles({ setFileName }) {
         console.error('Error:', error);
       }
     };
+    setFileName("/")
     fetchData();
   }, []);
 
@@ -38,14 +38,10 @@ function AllFiles({ setFileName }) {
   );
 }
 
-
-function FileContent( {setFileName} ) {
-
+function FileContent({ setFileName }) {
   const filename = window.location.pathname;
   const [content, setContent] = useState('');
-  
-  setFileName(filename);
-
+ 
   useEffect(() => {
     const fetchFileContent = async () => {
       try {
@@ -53,30 +49,36 @@ function FileContent( {setFileName} ) {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        console.log(data)
-        setContent(data);
+        const data = await response.text(); 
+        
+        const cleanedData = data.replace(/^["']|["']$/g, '');
+        
+        const markdownText = cleanedData
+        .replace(/\\t/g, '\t')
+        .replace(/\\n/g, '\n');
+        
+        setContent(markdownText);
       } catch (error) {
         console.error('Error:', error);
       }
     };
+    setFileName(decodeURI(filename))
     fetchFileContent();
   }, []);
 
   return (
     <div className="file-content">
-      <pre>{content}</pre>
+      <ReactMarkdown>{content}</ReactMarkdown>
     </div>
   );
 }
 
-// Основной компонент приложения с маршрутизацией
 export default function MainContent({ setFileName }) {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AllFiles setFileName={ setFileName }/>} />
-        <Route path="/:filename" element={<FileContent setFileName={ setFileName }/>} />
+        <Route path="/" element={<AllFiles setFileName={setFileName} />} />
+        <Route path="/:filename" element={<FileContent setFileName={setFileName} />} />
       </Routes>
     </Router>
   );

@@ -5,8 +5,7 @@ import './App.scss';
 import { useState } from 'react';
 
 const App = () => {
-  const [fileName, setFileName] = useState('')
-
+  const [fileName, setFileName] = useState('');
 
   return (
     <div className="app">

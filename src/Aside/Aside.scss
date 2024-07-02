@@ -1,11 +1,10 @@
 .sidebar {
     min-width: 94px;
     background-color: #1F1F1F;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     padding-top: 42px;
-    cursor: pointer;
+    min-height: 100vh;
 
     &__item {
         margin-bottom: 64px;
@@ -17,12 +16,12 @@
         background-color: transparent;
         border: none;
         padding: 0;
-        cursor: pointer;
     }
 
     &__icon {
         width: 25px;
         height: 25px;
+        cursor: pointer;
     }
 
     &__login-panel {
